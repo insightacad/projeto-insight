@@ -3,7 +3,7 @@
 **Visão Geral**
 Este projeto é uma aplicação web construída com Node.js e Express. Ele inclui funcionalidades de autenticação e gerenciamento de usuários, utilizando controladores e middlewares para organizar o código.
 
-** Configuração do Ambiente**
+**Configuração do Ambiente**
 Arquivo `.env`
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambiente: ``env´´
 
