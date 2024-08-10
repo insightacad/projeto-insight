@@ -1,50 +1,43 @@
-# Documentação do Protocolo-BicicletaComRodinha
+# Documentação do Back-end do projeto insight
 
-**Pré-requisitos**
-Antes de iniciar, certifique-se de que você tem o Node.js instalado em sua máquina. Essas ferramentas são essenciais para gerenciar as dependências do projeto e para executar o servidor de desenvolvimento.
+**Visão Geral**
+Este projeto é uma aplicação web construída com Node.js e Express. Ele inclui funcionalidades de autenticação e gerenciamento de usuários, utilizando controladores e middlewares para organizar o código.
 
-**Configuração Inicial**
+** Configuração do Ambiente**
+Arquivo `.env`
+Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambiente: ``env´´
 
-**1. Instalação das Dependências**
-Para instalar todas as dependências necessárias para o projeto, abra um terminal na raiz do projeto e execute o seguinte comando:
-```npm install```
+**Configuração da porta do servidor**
+PORT=80
 
-**Siga as instruções no terminal para rodar corretamente o projeto.**
+**Domínio principal permitido para CORS**
+MAINDOMAIN=https://localhost
 
-**3.Instalação do Express**
-O Express é um framework para Node.js que facilita a criação de aplicações web e API. Para instalá-lo, execute:
-```npm install express```
+**Outras variáveis de ambiente podem ser adicionadas aqui**
+``
+PORT=80
+DB = insight
+DB_USER=
+DB_PASS=
+DB_HOST=
+JWT_SECRET=
+``
 
-**O projeto estará rodando na porta 3000 do localhost, acessível através do endereço: http://localhost:3000**
+**Ignorar o arquivo .env**
+.env
 
-**5.Desenvolvimento com Nodemon**
-Para facilitar o desenvolvimento, instale o Nodemon globalmente e como dependência de desenvolvimento para reiniciar o servidor automaticamente a cada alteração no código:
+**Dependências**
+Instale as dependências do projeto usando npm: npm install
 
-```npm install -g nodemon```
-```npm install --save-dev nodemon```
+**Arquivo app.js**
+Este é o ponto de entrada da aplicação. Ele configura o servidor Express e define as rotas principais.
 
-**Para rodar o projeto com Nodemon, utilize:**
-```npx nodemon app```
+**Arquivo routes/userRoutes.js**
+Este arquivo define as rotas relacionadas aos usuários.
 
-**Banco de Dados e Autenticação**
+**Controladores**
+Os controladores (authController.js e userController.js) contêm a lógica de negócios para as rotas definidas. Certifique-se de implementar as funções signup, signin, dashboard, e updateProfile nesses arquivos.
 
-**1.Sequelize**
+**Middlewares**
+O middleware auth.js deve conter a lógica para verificar se o usuário é um administrador (eAdmin).
 
-**O Sequelize é um ORM para Node.js que suporta diversos bancos de dados. Para instalá-lo, juntamente com o driver do MySQL, execute:**
-```npm install --save sequelize mysql2```
-
-**2.Criação do Banco de Dados**
-Execute o seguinte comando SQL para criar o banco de dados necessário para o projeto:
-```CREATE DATABASE bicicletacomrodinha CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;```
-
-**3.Criptografia de Senha**
-Para a criptografia de senhas, utilizamos o módulo bcryptjs. Para instalá-lo, execute:
-```npm install --save bcryptjs```
-
-**4.JSON Web Token (JWT)**
-Para a implementação de autenticação via JWT, instale a dependência necessária:
-
-```npm install --save jsonwebtoken```
-
-**Conclusão**
-Após seguir estas instruções, seu ambiente de desenvolvimento estará configurado e pronto para ser utilizado. O projeto Protocolo-BicicletaComRodinha está agora configurado para desenvolvimento local, permitindo que você trabalhe na implementação de novas funcionalidades e na melhoria da aplicação.
