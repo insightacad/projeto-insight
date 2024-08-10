@@ -11,12 +11,12 @@ Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambient
 PORT=80
 
 **Domínio principal permitido para CORS**
-MAINDOMAIN=https://localhost
+MAINDOMAIN = https://localhost
 
 **Outras variáveis de ambiente podem ser adicionadas aqui**
 ``
-PORT=80
-DB = insight
+PORT=
+DB=
 DB_USER=
 DB_PASS=
 DB_HOST=
