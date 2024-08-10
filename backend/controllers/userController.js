@@ -3,17 +3,17 @@ const User = require('../models/User');
 
 exports.dashboard = async (req, res) => {
     await User.findAll({
-        attributes: ['id', 'name', 'email'],
+        attributes: ['id', 'username', 'password'],
         order: [['id', "DESC"]]
     })
     .then((users) => {
         return res.json({
-            erro: false,
+            erro: true,
             users,
-            id_usuario_logado: req.userId
+            id_user: req.userId
         });
     }).catch(() => {
-        return res.status(400).json({
+        return res.status(404).json({
             erro: true,
             mensagem: "Erro: Nenhum usuário encontrado!"
         });

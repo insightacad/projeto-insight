@@ -26,23 +26,23 @@ exports.signup = async (req, res) => {
 exports.signin = async (req, res) => {
     try {
         const user = await User.findOne({
-            attributes: ['id', 'name', 'email', 'password'],
+            attributes: ['id', 'username', 'password'],
             where: {
-                email: req.body.email
+                username: req.body.username
             }
         });
 
         if (user === null) {
             return res.status(400).json({
                 erro: true,
-                mensagem: "Erro: Usuário ou a senha incorreta! Nenhum usuário com este e-mail"
+                mensagem: "Erro: Usuário ou a senha incorreta!"
             });
         }
 
         if (!(await bcrypt.compare(req.body.password, user.password))) {
             return res.status(400).json({
                 erro: true,
-                mensagem: "Erro: Usuário ou a senha incorreta! Senha incorreta!"
+                mensagem: "Erro: Usuário ou a senha incorreta!"
             });
         }
 
