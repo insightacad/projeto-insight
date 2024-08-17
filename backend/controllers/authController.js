@@ -1,21 +1,30 @@
 // Carregar variáveis de ambiente do arquivo .env
 require('dotenv').config();
 
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const bcrypt = require('bcryptjs'); // Importa a biblioteca bcryptjs para criptografia de senhas
+const jwt = require('jsonwebtoken'); // Importa a biblioteca jsonwebtoken para manipulação de tokens JWT
+const User = require('../models/User'); // Importa o modelo User para interagir com a tabela de usuários no banco de dados
 
+// Função para cadastrar um novo usuário
 exports.signup = async (req, res) => {
-    const dados = req.body;
-    dados.password = await bcrypt.hash(dados.password, 32);
+    const http_body = req.body; // Obtém os dados do corpo da requisição
+
+    // Definindo o objeto dados com as informações do usuário
+    const dados = {
+        username: http_body.username,
+        nickname: http_body.nickname,
+        password: await bcrypt.hash(http_body.password, 12), // Criptografa a senha do usuário
+    };
 
     try {
+        // Tenta criar um novo usuário no banco de dados com os dados fornecidos
         await User.create(dados);
         return res.json({
             erro: false,
             mensagem: "Usuário cadastrado com sucesso!"
         });
     } catch (error) {
+        // Se ocorrer um erro ao criar o usuário, retorna uma mensagem de erro
         return res.status(400).json({
             erro: true,
             mensagem: "Erro: Usuário não cadastrado com sucesso!"
@@ -23,8 +32,10 @@ exports.signup = async (req, res) => {
     }
 };
 
+// Função para autenticar um usuário
 exports.signin = async (req, res) => {
     try {
+        // Busca o usuário no banco de dados pelo username fornecido
         const user = await User.findOne({
             attributes: ['id', 'username', 'password'],
             where: {
@@ -32,30 +43,38 @@ exports.signin = async (req, res) => {
             }
         });
 
-        if (user === null) {
+        // Se o usuário não for encontrado, retorna uma mensagem de erro
+        if (!user) {
             return res.status(400).json({
                 erro: true,
                 mensagem: "Erro: Usuário ou a senha incorreta!"
             });
         }
 
-        if (!(await bcrypt.compare(req.body.password, user.password))) {
+        // Compara a senha fornecida com a senha armazenada no banco de dados
+        const passwordMatch = await bcrypt.compare(req.body.password, user.password);
+
+        // Se as senhas não coincidirem, retorna uma mensagem de erro
+        if (!passwordMatch) {
             return res.status(400).json({
                 erro: true,
                 mensagem: "Erro: Usuário ou a senha incorreta!"
             });
         }
 
+        // Gera um token JWT para o usuário autenticado
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-            expiresIn: '7d' // 7 dias
+            expiresIn: '1h' // Tempo de expiração do token
         });
 
+        // Retorna uma mensagem de sucesso com o token gerado
         return res.json({
             erro: false,
             mensagem: "Login realizado com sucesso!",
             token
         });
     } catch (error) {
+        // Se ocorrer um erro interno do servidor, retorna uma mensagem de erro
         return res.status(500).json({
             erro: true,
             mensagem: "Erro interno do servidor!"

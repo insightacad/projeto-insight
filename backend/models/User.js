@@ -12,12 +12,20 @@ const User = db.define('users', {
         type: Sequelize.STRING,
         allowNull: false,
     },
+    nickname: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
     password: {
         type: Sequelize.STRING,
         allowNull: false,
-    }
+    },
+    description: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
 });
 
 //Criar a tabela (Manter comentado.)
-//User.sync();
+// User.sync();
 module.exports = User;

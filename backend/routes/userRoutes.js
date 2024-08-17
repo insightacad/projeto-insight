@@ -10,7 +10,12 @@ router.use(cors({
     credentials: true
   }));
 
-router.get('/', userController.dashboard);
+// Rota raiz
+router.get('/', (req, res) => {
+  // Adicionar o diretorio da homepage aqui.
+  // res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+router.post('/dashboard', userController.dashboard);
 router.post('/user/profile/update', userController.updateProfile);
 
 module.exports = router;

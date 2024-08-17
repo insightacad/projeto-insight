@@ -2,7 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const authRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authroutes');
 const userRoutes = require('./routes/userRoutes');
 const { eAdmin } = require('./middlewares/auth');
 const app = express();
