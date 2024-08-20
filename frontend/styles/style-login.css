@@ -7,9 +7,26 @@
     font-family: 'Lexend Deca', sans-serif;
 }
 
-button{
+button {
     cursor: pointer;
 }
+
+footer {
+    background-color: white;
+    position: inherit;
+    width: 70%;
+    height: 70%;
+}
+
+body {
+    background-color: red;
+    background-image: url(../media/images/wallpapersign.svg);
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-size: cover; /* Faz com que a imagem cubra toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed;
+}
+
 
 :root {
     --white: #FFF;
@@ -24,38 +41,44 @@ button{
 }
 
 #login {
+    background-color: white;
+    border-radius: 22px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
     width: 100%;
     max-width: 500px;
     padding: clamp(35px, 8%, 70px);
+    position: absolute;
+    top: 10%;
+    left: 35%;
 }
 
-main{
+main {
     display: flex;
 }
 
-.logo{
+.logo {
     height: 40px;
     width: 130px;
-    margin-bottom:40px;
+    margin-bottom: 40px;
 }
 
-#title{
+#title {
     color: var(--deep-gray);
     margin-bottom: 20px;
 }
 
-.label{
+.label {
     width: 100%;
     color: var(--medium-gray);
     font-weight: 600;
 }
-.input{
+
+.input {
     width: 100%;
-    padding:25px 10px 10px;
+    padding: 25px 10px 10px;
     border: 2px solid transparent;
     background-color: var(--light-gray);
     outline: none;
@@ -66,7 +89,7 @@ main{
     font-weight: 600;
 }
 
-.label span{
+.label span {
     position: absolute;
     font-size: .7em;
     text-transform: uppercase;
@@ -75,11 +98,11 @@ main{
     transition: all 300ms ease;
 }
 
-.label span.span-active{
+.label span.span-active {
     margin: 10px 8px;
 }
 
-#btns-container{
+#btns-container {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -88,19 +111,18 @@ main{
     margin-bottom: 20px;
 }
 
-#btns-container img{
+#btns-container img {
     width: 20px;
-
 }
 
-#btns-container button{
+#btns-container button {
     border: none;
     width: 33.33%;
     border-radius: 5%;
     height: 30px;
 }
 
-#login-button{
+#login-button {
     width: 60px;
     height: 60px;
     padding: 20px;
@@ -108,37 +130,124 @@ main{
     border: 1px solid transparent;
     border-radius: 10px;
     margin: 40px 0 20px;
+    position: relative;
+    top: -5%;
 }
 
-#login-button{
-    fill: var(--white)
+#login-button {
+    fill: var(--white);
 }
 
-#login-button:disabled{
+#login-button:disabled {
     width: 60px;
     height: 60px;
     padding: 20px;
     background-color: var(--white);
     border: 1px solid var(--gray);
     border-radius: 10px;
+    position: relative;
+    top: -5%;
 }
 
-#login-button:disabled{
-    fill: var(--gray)
+#login-button:disabled {
+    fill: var(--gray);
 }
 
-.link{
-    text-decoration: none;
+.link {
     text-transform: uppercase;
     font-size: .7em;
-    color: var(--medium-gray);
     margin-bottom: 10px;
+    position: relative;
+    top: -8%;
 }
 
-#wallpaper-container{
-    background-image: url(../media/img/wallpaper.jpg);
+#wallpaper-container {
     width: 100%;
     flex: 1;
     background-position: center;
     background-size: cover;
+}
+
+/* Media Queries para Responsividade */
+
+/* Tela menor que 768px (tablets e dispositivos móveis) */
+@media (max-width: 768px) {
+    #login {
+        top: 5%;
+        left: 5%;
+        padding: clamp(20px, 5%, 40px);
+        height: 70vh;
+    }
+
+    .logo {
+        height: 30px;
+        width: 100px;
+    }
+
+    #title {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .input {
+        padding: 20px 8px 8px;
+        font-size: .8em;
+    }
+
+    #btns-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #login-button {
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+    }
+    .link {
+        font-size: .6em;
+        margin-bottom: 8px; 
+        top: -8%;
+    }
+}
+
+/* Tela menor que 480px (smartphones) */
+@media (max-width: 480px) {
+    #login {
+        top: 2%;
+        left: 2%;
+        padding: clamp(15px, 4%, 30px);
+        height: 70vh;
+    }
+
+    .logo {
+        height: 25px;
+        width: 80px;
+    }
+
+    #title {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .input {
+        padding: 15px 5px 5px;
+        font-size: .7em;
+    }
+
+    #btns-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #login-button {
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+    }
+    .link {
+        font-size: .5em; 
+        margin-bottom: 6px;
+        top: -6%;
+    }
 }
