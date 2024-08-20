@@ -16,6 +16,8 @@ exports.signup = async (req, res) => {
         password: await bcrypt.hash(http_body.password, 12), // Criptografa a senha do usuário
     };
 
+    console.log(dados)
+
     try {
         // Tenta criar um novo usuário no banco de dados com os dados fornecidos
         await User.create(dados);

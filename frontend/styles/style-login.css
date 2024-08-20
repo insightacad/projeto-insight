@@ -19,7 +19,6 @@ footer {
 }
 
 body {
-    background-color: red;
     background-image: url(../media/images/wallpapersign.svg);
     background-repeat: no-repeat; /* Não repete a imagem */
     background-size: cover; /* Faz com que a imagem cubra toda a tela */
@@ -159,6 +158,15 @@ main {
     margin-bottom: 10px;
     position: relative;
     top: -8%;
+}
+
+#link-href {
+    position: inherit;
+    top: 90%;
+}
+#link-href2 {
+    position: inherit;
+    top: 70%;
 }
 
 #wallpaper-container {

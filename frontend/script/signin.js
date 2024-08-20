@@ -41,7 +41,7 @@ async function SubmitInfos() {
         };
 
         // HTTP Request
-        const response = await fetch("https://eno34kicrr3xp.x.pipedream.net",infostoapi)
+        const response = await fetch("/api/signin.js",infostoapi)
 
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);

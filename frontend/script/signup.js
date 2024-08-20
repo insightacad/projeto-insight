@@ -42,7 +42,7 @@ async function SubmitInfos() {
         if(password.value == secondpassword.value)
         {
             // HTTP Request
-            const response = await fetch("https://eno34kicrr3xp.x.pipedream.net",infostoapi)
+            const response = await fetch("/api/signup",infostoapi)
             if (!response.ok) {
                 throw new Error(`Response status: ${response.status}`);
             }
