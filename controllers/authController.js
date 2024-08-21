@@ -13,10 +13,10 @@ exports.signup = async (req, res) => {
     const dados = {
         username: http_body.username,
         nickname: http_body.nickname,
-        password: await bcrypt.hash(http_body.password, 12), // Criptografa a senha do usuário
+        password: await bcrypt.hash(http_body.password,12), // Criptografa a senha do usuário
     };
 
-    console.log(dados)
+    // console.log(dados)
 
     try {
         // Tenta criar um novo usuário no banco de dados com os dados fornecidos
@@ -26,6 +26,7 @@ exports.signup = async (req, res) => {
             mensagem: "Usuário cadastrado com sucesso!"
         });
     } catch (error) {
+        // console.error("Erro ao criar usuário:", error.message);
         // Se ocorrer um erro ao criar o usuário, retorna uma mensagem de erro
         return res.status(400).json({
             erro: true,
@@ -38,6 +39,8 @@ exports.signup = async (req, res) => {
 exports.signin = async (req, res) => {
     try {
         // Busca o usuário no banco de dados pelo username fornecido
+        //Ferramenta dee debug pos não estava funcionando esta merda!(manter comentado)
+        // console.log(req)
         const user = await User.findOne({
             attributes: ['id', 'username', 'password'],
             where: {
@@ -54,7 +57,13 @@ exports.signin = async (req, res) => {
         }
 
         // Compara a senha fornecida com a senha armazenada no banco de dados
+
+        //Ferramenta dee debug pos não estava funcionando esta merda!(manter comentado)
+        // console.log("Senha fornecida:", req.body.password);
+        // console.log("Hash armazenado:", user.password);
         const passwordMatch = await bcrypt.compare(req.body.password, user.password);
+        // console.log("As senhas correspondem?", passwordMatch);
+        
 
         // Se as senhas não coincidirem, retorna uma mensagem de erro
         if (!passwordMatch) {

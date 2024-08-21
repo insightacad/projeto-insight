@@ -15,11 +15,11 @@ router.use(cors({
 // Rota raiz
 router.get('/', (req, res) => {
   // Adicionar o diretorio da homepage aqui.
-  res.sendFile(path.join(__dirname, '../frontend/pages/signin.html'));
+  res.sendFile(path.join(__dirname, '../frontend/pages/homepage.html'));
 });
+router.post('/dashboard', userController.dashboard);
 
-router.get('/dashboard', userController.dashboard);
-router.post('/api/user/profile/update', userController.updateProfile);
-router.get('/api/profile:username', userController.UserInfo); //127.0.0.1:200/api/profile?username=test
+router.post('/user/profile/update', userController.updateProfile);
+router.get('/profile:username', userController.UserInfo); //127.0.0.1:200/api/profile?username=test
 
 module.exports = router;

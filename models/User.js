@@ -14,22 +14,15 @@ const User = db.define('users', {
     },
     nickname: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     password: {
         type: Sequelize.STRING,
         allowNull: false,
-    },
-    description: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    creation_date: {
-        type: Sequelize.DATEONLY,
-        allowNull: false,
-    },
+    }
+}, {
+    timestamps: false, // Desativa o uso de createdAt e updatedAt
 });
-
 //Criar a tabela (Manter comentado.)
 // User.sync();
 module.exports = User;

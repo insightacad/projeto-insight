@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+// const apiRoutes = require('./routes/apiRoutes');
 const { eAdmin } = require('./middlewares/auth');
 const app = express();
 
@@ -15,8 +16,11 @@ app.use(express.json());
 const port = process.env.PORT ;
 
 // ROTAS
-app.use('/', userRoutes);
-app.use('/dashboard', eAdmin, userRoutes);
+app.use('/user',userRoutes);
+app.use('/',authRoutes)
+//app.use('/',authRoutes);
+// app.use('/api', eAdmin, apiRoutes);
+
 
 app.listen(port, () => {
     console.log(`Servidor iniciado na porta ${port}: http://localhost:${port}`);
