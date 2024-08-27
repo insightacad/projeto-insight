@@ -21,29 +21,46 @@ USE `insight`;
 
 -- Copiando estrutura para tabela insight.courses
 CREATE TABLE IF NOT EXISTS `courses` (
-  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   `description` varchar(50) DEFAULT 'Insight',
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela insight.courses: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela insight.courses: ~1 rows (aproximadamente)
+INSERT INTO `courses` (`id`, `name`, `description`) VALUES
+	(1, 'Desenvolvimento Back-en', 'Insight');
 
 -- Copiando estrutura para tabela insight.users
 CREATE TABLE IF NOT EXISTS `users` (
-  `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Indentificador único chave primária do user',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Indentificador único chave primária do user',
   `username` varchar(200) DEFAULT NULL COMMENT 'Nome de usuario da conta',
   `password` varchar(200) DEFAULT NULL COMMENT 'senha em hash da conta',
   `nickname` varchar(200) DEFAULT NULL COMMENT 'nome do usuario da conta',
   `description` varchar(200) DEFAULT 'Transformando conhecimento em poder, unindo mentes para alcançar novas vitórias.' COMMENT 'descricao do perfil',
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'adicionar automaticamente a data de criação da conta',
-  PRIMARY KEY (`ID`),
+  PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabela para armazenamento dos dados de usuarios';
 
 -- Copiando dados para a tabela insight.users: ~1 rows (aproximadamente)
-INSERT INTO `users` (`ID`, `username`, `password`, `nickname`, `description`, `creation_date`) VALUES
+INSERT INTO `users` (`id`, `username`, `password`, `nickname`, `description`, `creation_date`) VALUES
 	(1, 'machinecombat68', '$2a$12$Ps7v2efLc31TxJKQI5qDEuDc991QzZiEea.rrDrf/YNX9LAcPEBua', 'João', 'Transformando conhecimento em poder, unindo mentes para alcançar novas vitórias.', '2024-08-21 03:28:34');
+
+-- Copiando estrutura para tabela insight.user_courses
+CREATE TABLE IF NOT EXISTS `user_courses` (
+  `user_id` bigint(20) NOT NULL,
+  `course_id` bigint(20) NOT NULL,
+  `enrollment_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`user_id`,`course_id`),
+  KEY `course_id` (`course_id`),
+  CONSTRAINT `user_courses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `user_courses_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Copiando dados para a tabela insight.user_courses: ~1 rows (aproximadamente)
+INSERT INTO `user_courses` (`user_id`, `course_id`, `enrollment_date`) VALUES
+	(1, 1, '2024-08-27 23:31:47');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
