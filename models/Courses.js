@@ -1,18 +1,18 @@
 const Sequelize = require('sequelize');
 const db = require('../../config/cfgdb');
 
-const Course = db.define('course', {
+const Courses = db.define('courses', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
-    course_name: {
+    name: {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    course_description: {
+    description: {
         type: Sequelize.STRING,
         allowNull: false,
     }
