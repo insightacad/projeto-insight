@@ -80,8 +80,7 @@ exports.updateProfile = async (req, res) => {
     }
 
     if (http_body.password != null) {
-      const salt = await bcrypt.genSalt(10);
-      user.password = await bcrypt.hash(http_body.password, salt);
+      user.password = await bcrypt.hash(http_body.password, 12);
     }
 
     await user.save();
