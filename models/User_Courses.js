@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../config/cfgdb');
 
-const User = db.define('user_courses', {
+const UserCourses = db.define('user_courses', {
     user_id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -19,4 +19,4 @@ const User = db.define('user_courses', {
 });
 //Criar a tabela (Manter comentado.)
 // User.sync();
-module.exports = User;
+module.exports = UserCourses;
