@@ -3,77 +3,97 @@ const User = require('../models/User'); // Importa o modelo User para interagir 
 
 // Função para exibir o dashboard com a lista de usuários
 exports.dashboard = async (req, res) => {
-  // Busca todos os usuários no banco de dados, selecionando apenas os atributos id, username e password, e ordena pelo id em ordem decrescente
-  await User.findAll({
-    attributes: ["id", "username", "password"],
-    order: [["id", "DESC"]]
-  })
-    .then((users) => {
-      // Se a busca for bem-sucedida, retorna um JSON com a lista de usuários e o id do usuário que fez a requisição
-      return res.json({
-        erro: true,
-        users,
-        id_user: req.userId,
-      });
-    })
-    .catch(() => {
-      // Se ocorrer um erro na busca, retorna um JSON com uma mensagem de erro
-      return res.status(404).json({
-        erro: true,
-        mensagem: "Erro: Nenhum usuário encontrado.",
-      });
+  try {
+    const users = await User.findAll({
+      attributes: ["id", "username", "password"],
+      order: [["id", "DESC"]]
     });
+
+    return res.json({
+      erro: false,
+      users,
+      id_user: req.userId,
+    });
+  } catch (error) {
+    return res.status(404).json({
+      erro: true,
+      mensagem: "Erro: Nenhum usuário encontrado.",
+    });
+  }
 };
 
 exports.UserInfo = async (req, res) => {
-  
-  const params = req.params
+  const params = req.params;
 
-  const user = await User.findOne({
-    attributes: ['id', 'username', 'pas'],
-    where: {
+  try {
+    const user = await User.findOne({
+      attributes: ['id', 'username', 'nickname', 'description', 'creation_date'],
+      where: {
         username: params.username
+      }
+    });
+
+    if (user) {
+      res.status(200).json({
+        id: user.id,
+        username: user.username,
+        nickname: user.nickname,
+        description: user.description,
+        creation_date: user.creation_date,
+      });
+    } else {
+      res.status(400).json({
+        message: "ERROR: Client Error",
+      });
     }
-  });
-
-  if (user) {
-    res.status(200).json({
-      id: user.id,
-      username: user.username,
-      nickname: user.nickname,
-      description: user.description,
-      creation_date: user.creation_date,
-    })
-  } else {
-    res.status(400).json({
-      message: "ERROR: Client Error",
-    })
+  } catch (error) {
+    res.status(500).json({
+      message: "ERROR: Server Error",
+    });
   }
-
-}
+};
 
 // Função para atualizar o perfil do usuário
 exports.updateProfile = async (req, res) => {
-  // Declaração de variáveis utilizadas localmente
   const http_body = req.body;
 
-  // Verifica se um novo nome de usuário foi fornecido
-  if (http_body.new_username != null) {
-    // Lógica para atualizar o nome de usuário
-  }
+  try {
+    const user = await User.findByPk(req.userId);
 
-  // Verifica se um novo apelido foi fornecido
-  if (http_body.new_nickname != null) {
-    // Lógica para atualizar o apelido
-  }
+    if (!user) {
+      return res.status(404).json({
+        erro: true,
+        mensagem: "Usuário não encontrado.",
+      });
+    }
 
-  // Verifica se uma nova descrição foi fornecida
-  if (http_body.new_description != null) {
-    // Lógica para atualizar a descrição
-  }
+    if (http_body.new_username != null) {
+      user.username = http_body.new_username;
+    }
 
-  // Verifica se uma nova senha foi fornecida
-  if (http_body.password != null) {
-    // Lógica para atualizar a senha
+    if (http_body.new_nickname != null) {
+      user.nickname = http_body.new_nickname;
+    }
+
+    if (http_body.new_description != null) {
+      user.description = http_body.new_description;
+    }
+
+    if (http_body.password != null) {
+      const salt = await bcrypt.genSalt(10);
+      user.password = await bcrypt.hash(http_body.password, salt);
+    }
+
+    await user.save();
+
+    return res.json({
+      erro: false,
+      mensagem: "Perfil atualizado com sucesso.",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      erro: true,
+      mensagem: "Erro ao atualizar perfil.",
+    });
   }
 };
