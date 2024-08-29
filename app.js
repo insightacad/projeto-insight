@@ -16,7 +16,7 @@ app.use(express.json());
 const port = process.env.PORT ;
 
 // ROTAS
-app.use('/user',userRoutes);
+app.use('/user',eAdmin,userRoutes);
 app.use('/',authRoutes)
 //app.use('/',authRoutes);
 // app.use('/api', eAdmin, apiRoutes);
