@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const db = require('../../config/cfgdb');
+const db = require('../config/cfgdb');
 
 const Courses = db.define('courses', {
     id: {
@@ -22,4 +22,4 @@ const Courses = db.define('courses', {
 
 //Criar a tabela (Manter comentado.)
 //User.sync();
-module.exports = Course;
+module.exports = Courses;

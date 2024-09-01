@@ -21,7 +21,6 @@ app.use('/',authRoutes)
 //app.use('/',authRoutes);
 // app.use('/api', eAdmin, apiRoutes);
 
-
 app.listen(port, () => {
     console.log(`Servidor iniciado na porta ${port}: http://localhost:${port}`);
 });
