@@ -1,43 +1,15 @@
-# Documentação do Back-end do projeto insight
+# Projeto Insight
 
-**Visão Geral**
-Este projeto é uma aplicação web construída com Node.js e Express. Ele inclui funcionalidades de autenticação e gerenciamento de usuários, utilizando controladores e middlewares para organizar o código.
+Bem-vindo ao repositório do **Projeto Insight**! Nosso objetivo é **conectar saberes e impulsionar conquistas** por meio de uma plataforma de estudos online acessível para todos.
 
-**Configuração do Ambiente**
-Arquivo `.env`
-Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambiente: ``env´´
+## Valores do Projeto
 
-**Configuração da porta do servidor**
-PORT=80
+- **Acessibilidade:** Tornar o conhecimento acessível a todos, independentemente de sua localização ou contexto socioeconômico.
+- **Colaboração:** Fomentar um ambiente onde a troca de conhecimentos é incentivada e valorizada.
+- **Qualidade:** Entregar materiais educacionais de alta qualidade, que promovam o desenvolvimento pessoal e profissional dos usuários.
+- **Inovação:** Buscar constantemente novas maneiras de melhorar a experiência de aprendizado online.
+- **Transparência:** Manter uma comunicação clara e aberta com todos os envolvidos no projeto.
 
-**Domínio principal permitido para CORS**
-MAINDOMAIN = https://localhost
+## Documentação
 
-**Outras variáveis de ambiente podem ser adicionadas aqui**
-``
-PORT=
-DB=
-DB_USER=
-DB_PASS=
-DB_HOST=
-JWT_SECRET=
-``
-
-**Ignorar o arquivo .env**
-.env
-
-**Dependências**
-Instale as dependências do projeto usando npm: npm install
-
-**Arquivo app.js**
-Este é o ponto de entrada da aplicação. Ele configura o servidor Express e define as rotas principais.
-
-**Arquivo routes/userRoutes.js**
-Este arquivo define as rotas relacionadas aos usuários.
-
-**Controladores**
-Os controladores (authController.js e userController.js) contêm a lógica de negócios para as rotas definidas. Certifique-se de implementar as funções signup, signin, dashboard, e updateProfile nesses arquivos.
-
-**Middlewares**
-O middleware auth.js deve conter a lógica para verificar se o usuário é um administrador (eAdmin).
-
+Para mais detalhes sobre como configurar e contribuir com o projeto, consulte a [documentação completa](https://docs.insightacad.com.br).
