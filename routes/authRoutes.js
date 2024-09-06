@@ -3,17 +3,15 @@ const path = require('path');
 const router = express.Router();
 const authController = require('../controllers/authController');
 
-    // Rotas de cadastro e login
+    // Rotas GET de autenticação 
     router.get('/signup', (req, res) => {
         res.sendFile(path.join(__dirname, '../frontend/pages/signup.html'));
     });
-  
-    router.post('/signup', authController.signup);
-  
     router.get('/signin', (req, res) => {
         res.sendFile(path.join(__dirname, '../frontend/pages/signin.html'));
     });
-  
-    router.post('/signin', authController.signin);
+    // Rotas POST de autenticação
+    router.post('/api/signup', authController.signup);
+    router.post('/api/signin', authController.signin);
 
 module.exports = router;
