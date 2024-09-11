@@ -1,19 +1,27 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const authController = require('../controllers/authController');
+const cors = require('cors');
+const env = require('dotenv')
 
+    router.use(cors({
+        origin: process.env.MAINDOMAIN,
+        methods: ['GET', 'POST'],
+        credentials: true
+    }));
+
+    //ROTA RAIZ
+    router.get('/', (req, res) => {
+        // Adicionar o diretorio da homepage aqui.
+        res.sendFile(path.join(__dirname, '../frontend/pages/homepage.html'));
+    });
     // Rotas de cadastro e login
     router.get('/signup', (req, res) => {
         res.sendFile(path.join(__dirname, '../frontend/pages/signup.html'));
     });
   
-    router.post('/signup', authController.signup);
-  
     router.get('/signin', (req, res) => {
         res.sendFile(path.join(__dirname, '../frontend/pages/signin.html'));
     });
-  
-    router.post('/signin', authController.signin);
 
 module.exports = router;

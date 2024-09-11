@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs"); // Importa a biblioteca bcryptjs para criptografia de senhas
 const User = require('../models/User'); // Importa o modelo User para interagir com a tabela de usuários no banco de dados
+const Course = require('../models/Courses'); // Importa o modelo Course para interagir com a tabela de cursos no banco de dados
 
 // Função para exibir o dashboard com a lista de usuários
 exports.dashboard = async (req, res) => {
@@ -8,16 +9,35 @@ exports.dashboard = async (req, res) => {
       attributes: ["id", "username", "password"],
       order: [["id", "DESC"]]
     });
-
     return res.json({
       erro: false,
-      users,
       id_user: req.userId,
     });
   } catch (error) {
     return res.status(404).json({
       erro: true,
       mensagem: "Erro: Nenhum usuário encontrado.",
+    });
+  }
+};
+
+// Função para obter a lista de cursos
+exports.getCourses = async (req, res) => {
+  try {
+    // Buscar todos os cursos do banco de dados
+    const courses = await Course.findAll({
+      attributes: ["id", "name", "description"], // Inclua os atributos definidos no modelo
+      order: [["id", "DESC"]] // Ordenar por ID, do mais recente para o mais antigo
+    });
+
+    return res.json({
+      erro: false,
+      courses
+    });
+  } catch (error) {
+    return res.status(500).json({
+      erro: true,
+      mensagem: "Erro ao buscar cursos.",
     });
   }
 };

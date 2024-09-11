@@ -2,9 +2,9 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const authRoutes = require('./routes/authRoutes');
-const userRoutes = require('./routes/userRoutes');
-// const apiRoutes = require('./routes/apiRoutes');
+const getRoutes = require('./routes/getRoutes');
+const blockedRoutes = require('./routes/blockedRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 const { eAdmin } = require('./middlewares/auth');
 const app = express();
 
@@ -16,10 +16,9 @@ app.use(express.json());
 const port = process.env.PORT ;
 
 // ROTAS
-app.use('/user',eAdmin,userRoutes);
-app.use('/',authRoutes)
-//app.use('/',authRoutes);
-// app.use('/api', eAdmin, apiRoutes);
+app.use('/',getRoutes);
+app.use('/dashboard',eAdmin,blockedRoutes);
+app.use('/api',apiRoutes)
 
 app.listen(port, () => {
     console.log(`Servidor iniciado na porta ${port}: http://localhost:${port}`);

@@ -1,6 +1,5 @@
 // Carregar variáveis de ambiente do arquivo .env
 require('dotenv').config();
-
 const bcrypt = require('bcryptjs'); // Importa a biblioteca bcryptjs para criptografia de senhas
 const jwt = require('jsonwebtoken'); // Importa a biblioteca jsonwebtoken para manipulação de tokens JWT
 const User = require('../models/User'); // Importa o modelo User para interagir com a tabela de usuários no banco de dados
