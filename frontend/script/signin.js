@@ -38,17 +38,25 @@ const submitInfos = async () => {
                 password: password.value
             }),
         };
-
         // Requisição HTTP
-        const response = await fetch("/api/login", infostoapi);
-
+        const response = await fetch("/api/signin", infostoapi);
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
-
+        
         // Depuração de erro
         const json = await response.json();
-        console.log(json);
+        if (!json.erro) {
+            // Login bem-sucedido
+            console.log(json.mensagem); // 'Login realizado com sucesso!'
+            // Armazenar o token em localStorage
+            localStorage.setItem('authToken', json.token);
+            // Redireciona para a pagina da dashboard
+            window.location.href = '/dashboard'
+        } else {
+            // Exibir a mensagem de erro
+            console.error(json.mensagem);
+        }
     } catch (error) {
         console.error(error.message);
     }
