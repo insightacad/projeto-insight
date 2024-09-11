@@ -37,7 +37,13 @@ async function SubmitInfos() {
         // Json Object
         const infostoapi = {
             method: "POST",
-            body: JSON.stringify({ username: username.value, password: password.value }),
+            headers: {
+                "Content-Type": "application/json" // Definir o tipo de conteúdo
+            },
+            body: JSON.stringify({
+                username: username.value,
+                password: password.value
+            }),
         };
 
         // HTTP Request
