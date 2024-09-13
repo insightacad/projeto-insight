@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta | Insight</title>
-    <link rel="stylesheet" href="/styles/style-login.css">
-    <script src="/script/signup.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles-signin.css" />
+    <link rel="icon" type="image/png" href="../media/images/logo.png" />
+    <script src="../script/script-signup.js" defer></script>
+    <title>SignUp | Insight</title>
+  </head>
+  <body>
     <main>
-        <section id="login">
-            <img src="/media/images/logo.svg" alt="logoinsight" class="logo">
-            <h1 id="title">Criar conta</h1>
-            <label for="name" class="label">
-                <span>Nome</span>
-                <input type="text" name="nickname" maxlenght="32" class="input">
-            </label>
-            <label for="username" class="label">
-                <span>Usuario</span>
-                <input type="email" name="username" maxlenght="32" class="input">
-            </label>
-            <label for="password"  class="label">
-                <span>Senha</span>
-                <input type="password" name="password" maxlenght="256" class="input">
-            </label>
-            <label for="secondpassword"  class="label">
-                <span>Confirme a Senha</span>
-                <input type="password" name="secondpassword" maxlenght="256" class="input">
-            </label>    
-                <button type="button" id="login-button" onclick="SubmitInfos()" disabled>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                      <path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/>
-                    </svg>
-                  </button>
-                  <p id="link-href">Já possui uma conta?<a class="link" href="signin.html"> Entrar</a></p>
-        </section>
-        <section id="wallpaper-container"></section>
+      <section class="login">
+        <div class="wrapper">
+          <img src="../media/images/logo.png" class="login__logo" />
+
+          <h1 class="login__title">Crie sua conta</h1>
+
+          <label class="login__label">
+            <span>Nome</span>
+            <input type="text" name="nickname" class="input" />
+          </label>
+
+          <label class="login__label">
+            <span>nome de usuário</span>
+            <input type="text" name="username" class="input" />
+          </label>
+
+          <label class="login__label">
+            <span>senha</span>
+            <input type="password" name="password" class="input" />
+          </label>
+
+          <label class="login__label">
+            <span>Confirme a senha</span>
+            <input type="password" name="password2" class="input" />
+          </label>
+        </div>
+        <div class="wrapper">
+          <button type="button" class="login__button" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
+              />
+            </svg>
+          </button>
+          <p class="login__link">Já possui uma conta?</p>
+          <a href="/signin" class="login__link" style="color: #098fe9"
+            >entre agora</a
+          >
+        </div>
+      </section>
+      <section class="wallpaper"></section>
     </main>
-</body>
+  </body>
 </html>
