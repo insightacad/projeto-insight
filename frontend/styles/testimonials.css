@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     gap: 48px;
+    flex-direction: column;
 }
 
 #testimonial_chef {
@@ -21,13 +22,14 @@
 
 #feedbacks {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Permite quebrar a linha quando necessário */
     gap: 20px;
     margin-bottom: 40px;
     margin-top: 30px;
 }
 
 .feedback {
+    flex: 1 1 calc(50% - 20px); /* Ocupa 50% do container menos a metade do espaço de gap */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -86,5 +88,6 @@
 
     .feedback {
         flex-direction: column;
+        flex: 1 1 100%; /* Faz com que cada feedback ocupe a largura total do container */
     }
-} 
+}
