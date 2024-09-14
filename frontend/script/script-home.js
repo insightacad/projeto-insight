@@ -22,17 +22,22 @@ $(document).ready(function() {
         sections.each(function(i) {
             const section = $(this);
             const sectionTop = section.offset().top - 96;
-            const sectionBottom = sectionTop+ section.outerHeight();
+            const sectionBottom = sectionTop + section.outerHeight();
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 activeSectionIndex = i;
                 return false;
             }
-        })
+        });
 
         navItems.removeClass('active');
         $(navItems[activeSectionIndex]).addClass('active');
     });
+
+    // Remover o hash da URL
+    if (window.location.hash) {
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
 
     ScrollReveal().reveal('#cta', {
         origin: 'left',
@@ -50,11 +55,11 @@ $(document).ready(function() {
         origin: 'left',
         duration: 1000,
         distance: '20%'
-    })
+    });
 
     ScrollReveal().reveal('.feedback', {
         origin: 'right',
         duration: 1000,
         distance: '20%'
-    })
+    });
 });
