@@ -169,7 +169,7 @@ main {
 
 .wallpaper {
     width: 100%;
-    background-image: url('../media/images/wallpaper.jpg');
+    background-image: url('../media/images/wallpapersign.svg');
     background-size: cover;
     background-position: center;
     flex: 1;
