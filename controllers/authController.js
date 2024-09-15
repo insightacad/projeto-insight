@@ -72,7 +72,7 @@ exports.signin = async (req, res) => {
         // Define o token como um cookie no cliente
         res.cookie('jwt_token', token, {
             httpOnly: true, // Impede que o JavaScript no frontend acesse o cookie
-            secure: false,  // Defina como 'true' se estiver usando HTTPS
+            secure: true,  // Defina como 'true' se estiver usando HTTPS
             maxAge: 3600000 // Expiração do cookie em 1 hora (em milissegundos)
         });
 
