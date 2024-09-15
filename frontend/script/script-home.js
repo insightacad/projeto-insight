@@ -34,10 +34,19 @@ $(document).ready(function() {
         $(navItems[activeSectionIndex]).addClass('active');
     });
 
-    // Remover o hash da URL
-    if (window.location.hash) {
-        history.pushState("", document.title, window.location.pathname + window.location.search);
-    }
+    // Remover o hash da URL após clicar em um link de navegação
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        const target = this.hash;
+        const $target = $(target);
+
+        $('html, body').animate({
+            scrollTop: $target.offset().top
+        }, 800, 'swing', function() {
+            // Remove o hash da URL após a navegação suave
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+        });
+    });
 
     ScrollReveal().reveal('#cta', {
         origin: 'left',
