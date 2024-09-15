@@ -46,17 +46,10 @@ const submitInfos = async () => {
         
         // Depuração de erro
         const json = await response.json();
-        if (!json.erro) {
-            // Login bem-sucedido
-            console.log(json.mensagem); // 'Login realizado com sucesso!'
-            // Armazenar o token em localStorage
-            localStorage.setItem('authToken', json.token);
-            // Redireciona para a pagina da dashboard
-            window.location.href = '/dashboard'
-        } else {
-            // Exibir a mensagem de erro
-            console.error(json.mensagem);
-        }
+        
+        window.location.href = '/dashboard'
+        // Exibir a mensagem de erro
+        console.error(json.mensagem);
     } catch (error) {
         console.error(error.message);
     }

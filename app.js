@@ -6,12 +6,14 @@ const getRoutes = require('./routes/getRoutes');
 const blockedRoutes = require('./routes/blockedRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 const { eAdmin } = require('./middlewares/auth');
+const cookieParser = require('cookie-parser');
 const app = express();
 
 // Configurar o caminho até a pasta styles localizada em frontend
 app.use(express.static(path.join(__dirname, 'frontend')));
-
 app.use(express.json());
+app.use(cookieParser()); // Adiciona o middleware cookie-parser
+
 // Usar a variável de ambiente PORT ou um valor padrão
 const port = process.env.PORT ;
 

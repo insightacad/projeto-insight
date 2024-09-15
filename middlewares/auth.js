@@ -4,18 +4,16 @@ const jwt = require('jsonwebtoken'); // Importa a biblioteca jsonwebtoken para m
 const secret = process.env.JWT_SECRET; // Obtém a chave secreta do JWT a partir das variáveis de ambiente
 
 exports.eAdmin = (req, res, next) => {
-    const authHeader = req.headers.authorization; // Obtém o cabeçalho de autorização da requisição
+    // Obtém o token JWT do cookie chamado 'jwt_token'
+    const token = req.cookies.jwt_token;
 
-    // Verifica se o cabeçalho de autorização foi fornecido
-    if (!authHeader) {
+    // Verifica se o token foi fornecido
+    if (!token) {
         return res.status(401).json({
             erro: true,
             mensagem: "Token não fornecido!"
         });
     }
-
-    // Divide o cabeçalho de autorização para obter o token
-    const [, token] = authHeader.split(' ');
 
     try {
         // Verifica e decodifica o token usando a chave secreta

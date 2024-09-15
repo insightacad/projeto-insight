@@ -69,16 +69,19 @@ exports.signin = async (req, res) => {
             expiresIn: '1h' // Tempo de expiração do token
         });
 
-        // Define o token no cabeçalho da resposta
-        res.setHeader('Authorization', `Bearer ${token}`);
-        
+        // Define o token como um cookie no cliente
+        res.cookie('jwt_token', token, {
+            httpOnly: true, // Impede que o JavaScript no frontend acesse o cookie
+            secure: false,  // Defina como 'true' se estiver usando HTTPS
+            maxAge: 3600000 // Expiração do cookie em 1 hora (em milissegundos)
+        });
+
         // Retorna uma mensagem de sucesso
         return res.status(200).json({
             erro: false,
-            mensagem: "Login realizado com sucesso!",
-            token
+            mensagem: "Login realizado com sucesso!"
         });
-        } 
+    } 
     catch (error) {
         // Se ocorrer um erro interno do servidor, retorna uma mensagem de erro
         return res.status(500).json({
@@ -87,3 +90,4 @@ exports.signin = async (req, res) => {
         });
     }
 };
+
