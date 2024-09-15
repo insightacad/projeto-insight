@@ -13,7 +13,7 @@ const env = require('dotenv')
     //ROTA RAIZ
     router.get('/', (req, res) => {
         // Adicionar o diretorio da homepage aqui.
-        res.sendFile(path.join(__dirname, '../frontend/pages/homepage.html'));
+        res.sendFile(path.join(__dirname, '../frontend/pages/home.html'));
     });
     // Rotas de cadastro e login
     router.get('/signup', (req, res) => {
