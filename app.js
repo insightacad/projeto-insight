@@ -25,6 +25,11 @@ const options = {
 // Usar a variável de ambiente PORT ou um valor padrão
 const port = process.env.PORT ;
 
+const options = {
+    key: fs.readFileSync('/etc/letsencrypt/live/insightacad.com.br/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/insightacad.com.br/fullchain.pem')
+};
+
 // ROTAS
 app.use('/',getRoutes);
 app.use('/dashboard',eAdmin,blockedRoutes);
