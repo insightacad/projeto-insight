@@ -8,7 +8,7 @@
 
 :root {
     --white: #FFF;
-    --whitesmoke: #F9F9F9;
+    --whitesmoke: #C4C4C4;
     --light-gray: #ECECEC;
     --gray: #C4C4C4;
     --medium-gray: #000000;
@@ -64,6 +64,7 @@ main {
 
 .login__label {
     display: block;
+    background-color: #e0e0e0;
     margin-bottom: 20px;
     width: 100%;
 }

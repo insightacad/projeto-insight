@@ -7,8 +7,9 @@ const userController = require('../controllers/userController');
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/pages/admin.html'));
 });
-router.post('/', userController.dashboard);
 
-router.get('/courses', userController.getCourses);
+router.get('/api', userController.dashboard);
+
+router.get('/api/courses', userController.getCourses);
 
 module.exports = router;

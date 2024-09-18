@@ -1,22 +1,41 @@
 const bcrypt = require("bcryptjs"); // Importa a biblioteca bcryptjs para criptografia de senhas
 const User = require('../models/User'); // Importa o modelo User para interagir com a tabela de usuários no banco de dados
 const Course = require('../models/Courses'); // Importa o modelo Course para interagir com a tabela de cursos no banco de dados
+const jwt = require('jsonwebtoken'); // Importa a biblioteca jsonwebtoken para manipulação de tokens JWT
+const secret = process.env.JWT_SECRET; // Obtém a chave secreta do JWT a partir das variáveis de ambiente
 
 // Função para exibir o dashboard com a lista de usuários
-exports.dashboard = async (req, res) => {
+exports.dashboard = async (req, res, next) => {
   try {
-    const users = await User.findAll({
-      attributes: ["id", "username", "password"],
-      order: [["id", "DESC"]]
+    // Recupera o usuário autenticado
+    const user = await User.findByPk(req.userId, {
+      attributes: ["id", "username","nickname","description"]
     });
+
+    // Verifica se o usuário foi encontrado
+    if (!user) {
+      return res.status(404).json({
+        erro: true,
+        mensagem: "Usuário não encontrado."
+      });
+    }
+
+    // Adiciona o usuário no objeto da requisição
+    req.user = user;
+
+    // Responde com os dados do usuário e ID
     return res.json({
       erro: false,
-      id_user: req.userId,
+      id: req.userId,
+      username: req.user.username,
+      nickname: req.user.nickname,
+      description: req.user.description
     });
   } catch (error) {
-    return res.status(404).json({
+    // Captura erros e responde com mensagem de erro
+    return res.status(500).json({
       erro: true,
-      mensagem: "Erro: Nenhum usuário encontrado.",
+      mensagem: "Erro ao recuperar os dados do usuário.",
     });
   }
 };
