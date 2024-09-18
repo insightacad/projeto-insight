@@ -34,6 +34,27 @@ exports.signup = async (req, res) => {
     }
 };
 
+//Função para o usuario deslogar
+exports.logout = async (req, res) => {
+    try {
+      // Remove o cookie do JWT
+      res.clearCookie('jwt_token', {
+        httpOnly: true, // Impede o acesso ao cookie via JavaScript
+        secure: true, // Apenas transmite o cookie por HTTPS em produção
+        path: '/' // Define o caminho onde o cookie deve ser acessível
+      });
+
+      // Redireciona para a rota de login se o token não for fornecido
+      return res.redirect('/');
+
+    } catch (error) {
+      return res.status(500).json({
+        erro: true,
+        mensagem: 'Erro ao finalizar a sessão.'
+      });
+    }
+  };
+
 // Função para autenticar um usuário
 exports.signin = async (req, res) => {
     try {

@@ -9,10 +9,8 @@ exports.eAdmin = (req, res, next) => {
 
     // Verifica se o token foi fornecido
     if (!token) {
-        return res.status(401).json({
-            erro: true,
-            mensagem: "Token não fornecido!"
-        });
+        // Redireciona para a rota de login se o token não for fornecido
+        return res.redirect('/signin');
     }
 
     try {
@@ -21,10 +19,7 @@ exports.eAdmin = (req, res, next) => {
         req.userId = decoded.id; // Armazena o ID do usuário decodificado na requisição
         return next(); // Chama o próximo middleware ou rota
     } catch (err) {
-        // Se o token for inválido, retorna uma mensagem de erro
-        return res.status(401).json({
-            erro: true,
-            mensagem: "Token inválido!"
-        });
+        // Redireciona para a rota de login se o token não for invalido
+        return res.redirect('/signin');
     }
 };
