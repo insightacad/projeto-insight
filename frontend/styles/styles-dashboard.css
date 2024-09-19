@@ -1,0 +1,278 @@
+/* Importação da Fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset e Estilo Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Garante que o body e o html ocupem toda a altura da tela */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contêiner principal para conteúdo */
+.main-content {
+    flex: 1; /* Faz com que o conteúdo principal ocupe todo o espaço disponível */
+}
+
+/* Estilização da Navegação */
+nav {
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Garante que elementos filhos absolutos são posicionados em relação ao nav */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    margin-right: 2rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #007bff;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 24px;
+    position: absolute;
+    right: 1rem; /* Ajuste o valor conforme necessário */
+    top: 50%; /* Alinha verticalmente ao centro */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+}
+
+.nav-icons a {
+    color: #D7D7D7;
+    text-decoration: none;
+}
+
+.nav-icons a:hover {
+    color: #FFFFFF;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.help, .profile {
+    margin-left: 2rem;
+}
+
+.help svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+    transition: fill 0.3s ease;
+}
+
+.help svg:hover {
+    fill: #007bff;
+}
+
+.profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Estilização da Seção de Boas-Vindas */
+.welcome-section {
+    padding: 1rem;
+    background-color: #ddd;
+    border-bottom: 1px solid #ddd; /* Linha divisória opcional */
+}
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.profile-logo {
+    width: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+    border-radius: 50%; /* Torna a imagem circular */
+    margin-right: 1rem; /* Espaço entre a imagem e o texto */
+}
+
+.welcome-text {
+    font-size: 1.5rem; /* Ajuste o tamanho do texto conforme necessário */
+    color: #333;
+}
+
+/* Estilização da Seção de Cursos */
+.courses-section {
+    padding: 2rem 1rem;
+    margin-top: 4rem; /* Garante que a seção de cursos não fique sobre a navbar */
+    background-color: #fff;
+}
+
+.courses-section h1 {
+    margin: 0 0 2rem;
+    color: #333;
+    font-size: 2rem;
+    text-align: center; /* Centraliza o título */
+}
+
+.courses-list {
+    display: flex;
+    flex-direction: column; /* Alinha os cursos em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    padding: 0;
+    margin: 0 auto; /* Garante que o conteúdo da lista seja centralizado dentro do contêiner pai */
+    width: 100%; /* Garante que a lista ocupe toda a largura disponível do contêiner pai */
+}
+
+.course-card {
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgb(105, 105, 105);
+    overflow: hidden;
+    width: 80%; /* Ajuste a largura conforme necessário */
+    max-width: 600px; /* Define um limite máximo de largura */
+    text-align: center;
+    margin-bottom: 1rem; /* Espaço entre os cards */
+}
+
+.course-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.course-info {
+    padding: 1rem;
+}
+
+.course-info h2 {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.course-info p {
+    color: #333;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #0055a4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45b5ff;
+}
+
+/* Estilização do Footer */
+footer {
+    background-color: #b4ccff;
+    color: #b4ccff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center; /* Centraliza os links horizontalmente */
+    gap: 10px; /* Espaço entre os links */
+    margin-bottom: 1rem; /* Espaço entre os links e o copyright */
+}
+
+.footer-links a {
+    color: #333; /* Cor dos links no footer */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 0.875rem; /* Tamanho da fonte dos links */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+}
+
+.footer-links a:hover {
+    color: #777777; /* Cor dos links quando o mouse está sobre eles */
+}
+
+.footer-copyright p {
+    color: #333; /* Cor do texto de copyright */
+    font-size: 0.88rem; /* Tamanho da fonte do texto de copyright */
+    margin: 0; /* Remove margens padrão */
+}
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .welcome-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-logo {
+        margin-bottom: 1rem; /* Espaço entre a imagem e o texto */
+    }
+
+    .courses-list {
+        flex-direction: column; /* Alinha os cursos em coluna */
+    }
+
+    .course-card {
+        width: 100%; /* Ajusta a largura do card para ocupar toda a largura disponível */
+    }
+}
+
+/* Responsividade para telas maiores */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px; /* Aumenta a largura máxima para telas maiores */
+    }
+
+    .course-card {
+        width: 60%; /* Ajusta a largura do card para ser maior em telas grandes */
+    }
+}
