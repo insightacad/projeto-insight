@@ -14,7 +14,6 @@ html, body {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
 }
@@ -166,9 +165,9 @@ nav {
 }
 
 .course-card {
-    background-color: #e6e6e6;
+    background-color: #fdfdfd;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgb(105, 105, 105);
+    box-shadow: 0 2px 5px rgba(105, 105, 105, 0.534);
     overflow: hidden;
     width: 80%; /* Ajuste a largura conforme necessário */
     max-width: 600px; /* Define um limite máximo de largura */
@@ -210,37 +209,6 @@ nav {
     background-color: #45b5ff;
 }
 
-/* Estilização do Footer */
-footer {
-    background-color: #b4ccff;
-    color: #b4ccff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center; /* Centraliza os links horizontalmente */
-    gap: 10px; /* Espaço entre os links */
-    margin-bottom: 1rem; /* Espaço entre os links e o copyright */
-}
-
-.footer-links a {
-    color: #333; /* Cor dos links no footer */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    font-size: 0.875rem; /* Tamanho da fonte dos links */
-    transition: color 0.3s ease; /* Transição suave para mudança de cor */
-}
-
-.footer-links a:hover {
-    color: #777777; /* Cor dos links quando o mouse está sobre eles */
-}
-
-.footer-copyright p {
-    color: #333; /* Cor do texto de copyright */
-    font-size: 0.88rem; /* Tamanho da fonte do texto de copyright */
-    margin: 0; /* Remove margens padrão */
-}
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .container {
