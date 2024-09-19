@@ -24,4 +24,8 @@ const env = require('dotenv')
         res.sendFile(path.join(__dirname, '../frontend/pages/signin.html'));
     });
 
+    router.get('/admin', (req, res) => {
+        res.sendFile(path.join(__dirname, '../frontend/pages/admin.html'));
+    });
+
 module.exports = router;
