@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | Insight</title>
+    <title>Comunidades | Insight</title>
     <link rel="stylesheet" href="../styles/styles-dashboard.css" />
-    <script src="../script/script-dashboard.js" defer></script>
     <link rel="icon" type="image/png" href="../media/images/logo.svg" />
   </head>
   <body>
@@ -13,7 +12,7 @@
       <nav>
         <div class="container">
           <a href="/dashboard" class="logo">
-            <img src="../media/images/logo.svg" alt="Logo" />
+            <img src="../media/images/logo.svg" alt="Logo Insight" />
           </a>
           <ul class="nav-list">
             <li><a href="/dashboard">Dashboard</a></li>
@@ -96,24 +95,130 @@
       </nav>
     </header>
     <main>
-      <!-- Seção de Boas-Vindas -->
-      <section class="welcome-section">
-        <div class="welcome-container">
-          <img
-            src="../media/images/profile.png"
-            alt="Logo de Perfil"
-            class="profile-logo"
-          />
-          <p class="welcome-text"></p>
-        </div>
-      </section>
       <section class="courses-section">
         <div class="container">
           <div class="courses-list">
-            <h1>Área de Estudos</h1>
+            <h1>Comunidades</h1>
+            <div class="course-card">
+              <img
+                src="../media/images/community.jpg"
+                alt="Community Thumbnail"
+              />
+              <div class="course-info">
+                <h2>Lucas Montano</h2>
+                <p>
+                  Faça parte da comunidade do Lucas Montano! Um espaço
+                  colaborativo onde desenvolvedores e entusiastas de tecnologia
+                  se reúnem para compartilhar conhecimento, experiências e
+                  crescer juntos. Acesse conteúdos exclusivos sobre programação,
+                  carreira e inovação. Conecte-se com pessoas que compartilham a
+                  mesma paixão pelo código e pela aprendizagem contínua.
+                </p>
+                <a href="https://discord.com/invite/cK8nSccsgD" class="btn"
+                  >Acessar comunidade</a
+                >
+              </div>
+            </div>
+            <div class="course-card">
+              <img
+                src="../media/images/community.jpg"
+                alt="Community Thumbnail"
+              />
+              <div class="course-info">
+                <h2>Mano Deyvin</h2>
+                <p>
+                  Junte-se ao Chorume do Mano Deyvin! Um espaço irreverente e
+                  cheio de conteúdo para desenvolvedores e entusiastas de
+                  tecnologia que buscam aprendizado e troca de experiências.
+                  Aqui, você encontra dicas, conversas sobre carreira e muita
+                  informação relevante de forma descontraída, além de uma
+                  comunidade ativa e engajada.
+                </p>
+                <a href="https://discord.com/invite/7khGQfUqJz" class="btn"
+                  >Acessar comunidade</a
+                >
+              </div>
+            </div>
+            <div class="course-card">
+              <img
+                src="../media/images/community.jpg"
+                alt="Community Thumbnail"
+              />
+              <div class="course-info">
+                <h2>r/brdev</h2>
+                <p>
+                  Faça parte da comunidade r/brdev no Reddit! Um espaço
+                  colaborativo para desenvolvedores brasileiros trocarem
+                  conhecimentos, experiências e discutirem tudo sobre
+                  tecnologia, programação e carreira. Conecte-se com outros
+                  profissionais e participe de discussões que ajudam a crescer
+                  na área de desenvolvimento.
+                </p>
+                <a href="https://www.reddit.com/r/brdev/" class="btn"
+                  >Acessar comunidade</a
+                >
+              </div>
+            </div>
+            <div class="course-card">
+              <img
+                src="../media/images/community.jpg"
+                alt="Community Thumbnail"
+              />
+              <div class="course-info">
+                <h2>Hack The Box</h2>
+                <p>
+                  Junte-se à Hack The Box, a comunidade ideal para quem deseja
+                  explorar e aprimorar suas habilidades em cibersegurança e
+                  hacking ético. Desafie-se com laboratórios práticos, resolva
+                  desafios complexos e aprenda com outros profissionais
+                  apaixonados por segurança digital. Vale lembrar que a
+                  plataforma e os desafios estão em inglês. Seja você um
+                  iniciante ou um expert, aqui é o lugar para expandir seus
+                  conhecimentos e testar suas habilidades em um ambiente
+                  realista.
+                </p>
+                <a href="https://discord.gg/hackthebox" class="btn"
+                  >Acessar comunidade</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
+    <script>
+      const toggleButtons = document.querySelectorAll('.edit-post');
+const dropdowns = document.querySelectorAll('.dropdown');
+
+// Função para mostrar o menu dropdown associado ao botão clicado
+function showOptionsMenu(event) {
+    // Mostra todos os dropdowns
+    dropdowns.forEach(dropdown => {
+        dropdown.hidden = false;
+    });
+}
+
+// Função para esconder todos os menus dropdown
+function hideOptionsMenu(event) {
+    // Verifica se o clique não foi dentro dos menus dropdown ou no botão
+    const isClickInsideDropdown = Array.from(dropdowns).some(dropdown => dropdown.contains(event.target));
+    const isClickInsideButton = Array.from(toggleButtons).some(button => button.contains(event.target));
+    
+    if (!isClickInsideDropdown && !isClickInsideButton) {
+        dropdowns.forEach(dropdown => {
+            dropdown.hidden = true;
+        });
+    }
+}
+
+// Adiciona os manipuladores de eventos aos botões
+toggleButtons.forEach(button => {
+    button.addEventListener('click', showOptionsMenu);
+});
+
+// Adiciona o manipulador de eventos ao documento
+document.addEventListener('click', hideOptionsMenu);
+
+    </script>
   </body>
 </html>

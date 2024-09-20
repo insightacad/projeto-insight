@@ -1,0 +1,129 @@
+body {
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.left-side {
+    width: 25%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.left-side img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.left-side h2 {
+    margin-bottom: 10px;
+}
+
+.left-side p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.left-side button {
+    background-color: #0055a4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.right-side {
+    width: 75%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+.right-side h2 {
+    margin-bottom: 20px;
+}
+
+.right-side .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.right-side .info span {
+    font-weight: bold;
+}
+
+.right-side .social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.right-side .social-media a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.right-side .social-media a:hover {
+    background-color: #ddd;
+}
+
+.right-side .social-media a i {
+    font-size: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header .icons {
+    display: flex;
+    align-items: center;
+}
+
+.header .icons a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.header .icons a:hover {
+    color: #0055a4;
+}

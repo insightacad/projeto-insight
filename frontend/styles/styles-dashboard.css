@@ -115,10 +115,13 @@ nav {
 }
 
 /* Estilização da Seção de Boas-Vindas */
-.welcome-section {
+.welcome-section { 
     padding: 1rem;
     background-color: #ddd;
     border-bottom: 1px solid #ddd; /* Linha divisória opcional */
+    background-image: url('../media/images/backgroundprofile.png');
+    background-size: cover; /* Ajusta a imagem para cobrir toda a seção */
+    background-position: center; /* Centraliza a imagem */
 }
 
 .welcome-container {
@@ -138,7 +141,7 @@ nav {
 
 .welcome-text {
     font-size: 1.5rem; /* Ajuste o tamanho do texto conforme necessário */
-    color: #333;
+    color: #fff;
 }
 
 /* Estilização da Seção de Cursos */
@@ -208,6 +211,135 @@ nav {
 .btn:hover {
     background-color: #45b5ff;
 }
+
+.dropdown {
+    position: absolute;
+    top: 0%;
+    left: 78%;
+  }
+  
+  .input {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    background-color: #fff;
+    border: 1px solid #1A1F24;
+    justify-content: center;
+    border-radius: 5px;
+  }
+  
+  .dropdown-dialog {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    position: relative;
+    gap: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .dropdown-dialog:not(:active):hover,
+  .dropdown-dialog:focus {
+    background-color: #45b5ff;
+  }
+  
+  .dropdown-dialog:focus,
+  .dropdown-dialog:active {
+    background-color: #0080ff;
+    outline: none;
+  }
+  
+  .dropdown-dialog::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    width: 5px;
+    height: 80%;
+    background-color: #2F81F7;
+    border-radius: 5px;
+    opacity: 0;
+  }
+  
+  .dropdown-dialog:focus::before,
+  .dropdown-dialog:active::before {
+    opacity: 1;
+  }
+  
+  .dropdown-dialog svg {
+    width: 15px;
+  }
+  
+  .edit-post {
+    position: relative;
+    left: 70%;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 50px; /* Altere para 50px */
+    height: 50px; /* Altere para 50px */
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.edit-post img {
+    width: 40px;  /* Largura da imagem */
+    height: 40px; /* Altura da imagem */
+    object-fit: cover; /* Ajusta a imagem para caber dentro da área */
+}
+  
+  .edit-tooltip {
+    position: absolute;
+    top: 0px;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    width: 150px;
+  }
+  
+  .edit-tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .edit-post:hover .edit-tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .edit-icon {
+    font-size: 24px;
+  }
+  
+  .edit-post:hover,
+  .edit-post:hover .edit-tooltip,
+  .edit-post:hover .edit-tooltip::before {
+    color: #ffffff;
+  }
+  
+
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {

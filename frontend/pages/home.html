@@ -1,291 +1,363 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="icon" type="image/png" href="../media/images/logo.svg">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="icon" type="image/png" href="../media/images/logo.svg" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <title>Home | Insight</title>
-    <meta name="description" content="Conectando saberes, impulsionando conquistas.">
-    <meta name="keywords" content="Plataforma de Aprendizado Online, Curso Online, Educação Digital, Material Didático Online, Educação Personalizada, Ferramentas de Aprendizado Interativo">
-    <meta property="og:title" content="Insight | Conectando saberes, impulsionando conquistas.">
-    <meta property="og:description" content="Insight é uma plataforma de aprendizado online que oferece materiais didáticos para impulsionar seu desenvolvimento profissional e pessoal. Explore e aprenda com ferramentas educativas avançadas.">
-    <meta property="og:image" content="https://insightacad.com.br/media/images/logo.svg">
-    <meta property="og:url" content="https://www.insightacad.com.br">
-    <meta property="og:type" content="website">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Conectando saberes, impulsionando conquistas."
+    />
+    <meta
+      name="keywords"
+      content="Plataforma de Aprendizado Online, Curso Online, Educação Digital, Material Didático Online, Educação Personalizada, Ferramentas de Aprendizado Interativo"
+    />
+    <meta
+      property="og:title"
+      content="Insight | Conectando saberes, impulsionando conquistas."
+    />
+    <meta
+      property="og:description"
+      content="Insight é uma plataforma de aprendizado online que oferece materiais didáticos para impulsionar seu desenvolvimento profissional e pessoal. Explore e aprenda com ferramentas educativas avançadas."
+    />
+    <meta
+      property="og:image"
+      content="https://insightacad.com.br/media/images/logo.svg"
+    />
+    <meta property="og:url" content="https://www.insightacad.com.br" />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
     <header>
-        <nav id="navbar">
-            <img src="../media/images/logo.svg" id="nav_logo" alt="Logo Insight">
+      <nav id="navbar">
+        <img src="../media/images/logo.svg" id="nav_logo" alt="Logo Insight" />
 
-            <ul id="nav_list">
-                <li class="nav-item active">
-                    <a href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials">Sobre nós</a>
-                </li>
-            </ul>
-            <div id="cta_buttons">
-                <button class="btn-default">
-                    <a href="/signin">Entrar</a>
-                </button>
-            </div>
-
-            <button id="mobile_btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </nav>
-
-        <div id="mobile_menu">
-            <ul id="mobile_nav_list">
-                <li class="nav-item">
-                    <a href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials">Sobre Nós</a>
-                </li>
-            </ul>
-            <div id="cta_buttons">
-                <button class="btn-default">
-                    <a href="/signin">Entrar</a>
-                </button>
-            </div>
+        <ul id="nav_list">
+          <li class="nav-item active">
+            <a href="#home">Início</a>
+          </li>
+          <li class="nav-item">
+            <a href="#testimonials">Sobre nós</a>
+          </li>
+        </ul>
+        <div id="cta_buttons">
+          <button class="btn-default">
+            <a href="/signin">Entrar</a>
+          </button>
         </div>
+
+        <button id="mobile_btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <div id="mobile_menu">
+        <ul id="mobile_nav_list">
+          <li class="nav-item">
+            <a href="#home">Início</a>
+          </li>
+          <li class="nav-item">
+            <a href="#testimonials">Sobre Nós</a>
+          </li>
+        </ul>
+        <div id="cta_buttons">
+          <button class="btn-default">
+            <a href="/signin">Entrar</a>
+          </button>
+        </div>
+      </div>
     </header>
 
     <main id="content">
-        <section id="home">
-            <div class="shape"></div>
-            <div id="cta">
-                <h1 class="title">
-                    Impulsione seu
-                    <span>saber</span>
-                </h1>
+      <section id="home">
+        <div class="shape"></div>
+        <div id="cta">
+          <h1 class="title">
+            Impulsione seu
+            <span>saber</span>
+          </h1>
 
-                <p class="description">
-                    Dê o primeiro passo para transformar seu aprendizado. Tenha acesso a materiais valiosos que irão impulsionar a sua jornada.
+          <p class="description">
+            Dê o primeiro passo para transformar seu aprendizado. Tenha acesso a
+            materiais valiosos que irão impulsionar a sua jornada.
+          </p>
+
+          <div id="cta_buttons">
+            <a href="/signup" class="btn-default">
+              Cadastre-se gratuitamente
+            </a>
+          </div>
+
+          <div class="social-media-buttons">
+            <a href="https://docs.insightacad.com.br/">
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://instagram.com/insight.acad">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div id="banner">
+          <img
+            src="../media/images/gabriel.png"
+            alt="Imagem destacada do banner"
+          />
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <!-- <img src="src/images/chef.png" id="testimonial_chef" alt=""> -->
+
+        <div id="testimonials_content">
+          <br />
+          <br />
+          <h2 class="section-title">Sobre nós</h2>
+          <h3 class="section-subtitle">Equipe Insight</h3>
+
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/joaodavid.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+
+              <div class="feedback-content">
+                <p>João David <span>Diretor Geral</span></p>
+                <p>
+                  Estou começando minha jornada na carreira de desenvolvedor e
+                  lidero o Insight. Meu papel é orientar a equipe na criação de
+                  uma plataforma que busca facilitar o acesso ao conhecimento,
+                  conectando usuários a recursos educativos valiosos. Além
+                  disso, desenvolvi o backend do projeto, garantindo uma base
+                  sólida e eficiente. Gosto de enfrentar desafios e estou
+                  empolgado para aprender e crescer nesse caminho.
                 </p>
-
-                <div id="cta_buttons">
-                    <a href="/signup" class="btn-default">
-                        Cadastre-se gratuitamente
-                    </a>
-                </div>
-
-                <div class="social-media-buttons">
-                    <a href="/docs">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-
-                    <a href="https://instagram.com/insight.acad">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </div>
+              </div>
             </div>
+          </div>
 
-            <div id="banner">
-                <img src="../media/images/gabriel.png" alt="Imagem destacada do banner">
+          <div id="feedbacks">
+            <div class="feedback">
+              <img src="../media/images/avatar.png" class="feedback-avatar" alt="Avatar" />
+              <div class="feedback-content">
+                <p>Nathan Steyka <span>Diretor de Desenvolvimento</span></p>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellat voluptatibus cumque dolor ea est quae alias
+                  necessitatibus"
+                </p>
+              </div>
             </div>
-        </section>
-
-        <section id="testimonials">
-            <!-- <img src="src/images/chef.png" id="testimonial_chef" alt=""> -->
-
-            <div id="testimonials_content">
-                <br/>
-                <br/>
-                <h2 class="section-title">Sobre nós</h2>
-                <h3 class="section-subtitle">Nossa Equipe</h3>
-
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-
-                    <div class="feedback-content">
-                        <p>
-                            João David <span>Diretor Geral</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Nathan Steyka <span>Diretor de Desenvolvimento</span>
-                        </p>
-                        <p>
-                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="../media/images/dauton.png" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Dauton Ramos <span>Diretor de Comunicação</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Luiz Augusto <span>Designer UI/UX</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Pedro Luiz <span>Database Administrator</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Julio Junior <span>Analista de Banco de dados</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Julia Rosa <span>Especialista em Documentação</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Gisele Amaro <span>Designer de Comunicação</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Vitor Listo <span>Redator Técnico</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="https://cdn.discordapp.com/attachments/1262207981039386705/1284970377239466106/pngwing.com.png?ex=66e8916b&is=66e73feb&hm=e45592e834936e8afdf0c3cb6147e630b7743f5aaf9bf6908e9c0a0a94be4c5e&" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            Gabriel Pamplona <span>Redator Técnico</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="../media/images/joaovitor.png" class="feedback-avatar" alt="Avatar Cliente">
-                    <div class="feedback-content">
-                        <p>
-                            João Vitor <span>Gestor de Diário de Bordo</span>
-                        </p>
-                        <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                <div id="cta_buttons">
-                    <a href="https://docs.insightacad.com.br/" class="btn-default">
-                        Leia a Documentação
-                    </a>
-                </div>
+          </div>
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/dauton.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>Dauton Ramos <span>Diretor de Comunicação</span></p>
+                <p>
+                  Estou começando minha carreira na informática como
+                  profissional de TI. Além disso, aos 15 anos, fui um dos
+                  responsáveis que ajudaram na criação do Insight. Meu objetivo
+                  é aprender cada vez mais, principalmente com meus companheiros
+                  de equipe, para que eu possa ganhar experiência , e crescer
+                  nesse caminho da informática
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/avatar.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>Luiz Augusto <span>Designer UI/UX</span></p>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellat voluptatibus cumque dolor ea est quae alias
+                  necessitatibus"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/avatar.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>Pedro Luiz <span>Database Administrator</span></p>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellat voluptatibus cumque dolor ea est quae alias
+                  necessitatibus"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/avatar.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>Julio Junior <span>Analista de Banco de dados</span></p>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellat voluptatibus cumque dolor ea est quae alias
+                  necessitatibus"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/avatar.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>Julia Rosa <span>Especialista em Documentação</span></p>
+                <p>
+                  Estou começando minha jornada na informática como aluna do
+                  ensino médio. Apesar de ser iniciante, já sou responsável pela
+                  organização e estruturação dos materiais técnicos do site.
+                  Gosto de transformar informações complexas em documentos
+                  claros e acessíveis. Acredito que a documentação bem feita é a
+                  base para um trabalho eficiente e colaborativo, e vejo cada
+                  novo desafio como uma oportunidade para crescer e contribuir
+                  ainda mais. Quando não estou mergulhada no mundo da
+                  tecnologia, gosto de ler e me envolver em diferentes formas de
+                  adquirir conhecimento.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/avatar.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>Gisele Amaro <span>Designer de Comunicação</span></p>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellat voluptatibus cumque dolor ea est quae alias
+                  necessitatibus"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/avatar.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>Vitor Listo <span>Redator Técnico</span></p>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellat voluptatibus cumque dolor ea est quae alias
+                  necessitatibus"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/avatar.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>Gabriel Pamplona <span>Redator Técnico</span></p>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellat voluptatibus cumque dolor ea est quae alias
+                  necessitatibus"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="feedbacks">
+            <div class="feedback">
+              <img
+                src="../media/images/joaovitor.png"
+                class="feedback-avatar"
+                alt="Avatar"
+              />
+              <div class="feedback-content">
+                <p>João Vitor <span>Gestor de Diário de Bordo</span></p>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellat voluptatibus cumque dolor ea est quae alias
+                  necessitatibus"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="cta_buttons">
+            <a href="https://docs.insightacad.com.br/" class="btn-default">
+              Leia a Documentação
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <img src="src/images/footer-logo.png" alt="">
-        <div id="footer_items">
-            <span id="copyright">&copy; 2024 Insight Academy</span>
-            <div class="social-media-buttons">
-                <a href="https://docs.insightacad.com.br/">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://instagram.com/insight.acad">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
+      <img src="src/images/footer-logo.png" alt="" />
+      <div id="footer_items">
+        <span id="copyright">&copy; 2024 Insight</span>
+        <div class="social-media-buttons">
+          <a href="https://docs.insightacad.com.br/">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://instagram.com/insight.acad">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
+      </div>
     </footer>
     <script src="../script/script-home.js"></script>
-</body>
+  </body>
 </html>

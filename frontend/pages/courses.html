@@ -3,31 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Courses | Insight</title>
-    <link rel="stylesheet" href="styles-dashboard.css" />
-    <link rel="icon" type="image/png" href="../media/images/logo.svg">
+    <title>Conteudos | Insight</title>
+    <link rel="stylesheet" href="../styles/styles-dashboard.css" />
+    <script src="../script/script-courses.js" defer></script>
+    <link rel="icon" type="image/png" href="../media/images/logo.svg" />
   </head>
   <body>
     <header>
       <nav>
         <div class="container">
           <a href="/dashboard" class="logo">
-            <img
-              src="../media/images/logo.svg"
-              alt="Logo Insight"
-            />
+            <img src="../media/images/logo.svg" alt="Logo Insight" />
           </a>
           <ul class="nav-list">
             <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/dashboard/courses">Conteúdos</a></li>
+            <li><a href="/dashboard/conteudos">Conteúdos</a></li>
+            <li><a href="/dashboard/comunidades">Comunidades</a></li>
           </ul>
           <div class="actions">
-            <a href="/dashboard/profile" class="profile">
-              <img
-                src="https://th.bing.com/th/id/OIP.RmYbsdvh7NdvW48q-twvTAHaHa?rs=1&pid=ImgDetMain"
-                alt="Profile Picture"
-              />
-            </a>
+            <div class="edit-post">
+              <img src="../media/images/rodela.png" alt="rodela">
+            </div>
+            <div class="dropdown" hidden>
+              <div class="input">
+                <button
+                  class="dropdown-dialog"
+                  onclick="location.href = '/dashboard/profile'"
+                >
+                  <svg
+                    data-name="Layer 2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m1.5 13v1a.5.5 0 0 0 .3379.4731 18.9718 18.9718 0 0 0 6.1621 1.0269 18.9629 18.9629 0 0 0 6.1621-1.0269.5.5 0 0 0 .3379-.4731v-1a6.5083 6.5083 0 0 0 -4.461-6.1676 3.5 3.5 0 1 0 -4.078 0 6.5083 6.5083 0 0 0 -4.461 6.1676zm4-9a2.5 2.5 0 1 1 2.5 2.5 2.5026 2.5026 0 0 1 -2.5-2.5zm2.5 3.5a5.5066 5.5066 0 0 1 5.5 5.5v.6392a18.08 18.08 0 0 1 -11 0v-.6392a5.5066 5.5066 0 0 1 5.5-5.5z"
+                      fill="#7D8590"
+                    ></path>
+                  </svg>
+                  Perfil
+                </button>
+                <button
+                  class="dropdown-dialog"
+                  onclick="location.href = '/dashboard/settings'"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 32"
+                    id="Line"
+                  >
+                    <path
+                      d="m17.074 30h-2.148c-1.038 0-1.914-.811-1.994-1.846l-.125-1.635c-.687-.208-1.351-.484-1.985-.824l-1.246 1.067c-.788.677-1.98.631-2.715-.104l-1.52-1.52c-.734-.734-.78-1.927-.104-2.715l1.067-1.246c-.34-.635-.616-1.299-.824-1.985l-1.634-.125c-1.035-.079-1.846-.955-1.846-1.993v-2.148c0-1.038.811-1.914 1.846-1.994l1.635-.125c.208-.687.484-1.351.824-1.985l-1.068-1.247c-.676-.788-.631-1.98.104-2.715l1.52-1.52c.734-.734 1.927-.779 2.715-.104l1.246 1.067c.635-.34 1.299-.616 1.985-.824l.125-1.634c.08-1.034.956-1.845 1.994-1.845h2.148c1.038 0 1.914.811 1.994 1.846l.125 1.635c.687.208 1.351.484 1.985.824l1.246-1.067c.787-.676 1.98-.631 2.715.104l1.52 1.52c.734.734.78 1.927.104 2.715l-1.067 1.246c.34.635.616 1.299.824 1.985l1.634.125c1.035.079 1.846.955 1.846 1.993v2.148c0 1.038-.811 1.914-1.846 1.994l-1.635.125c-.208.687-.484 1.351-.824 1.985l1.067 1.246c.677.788.631 1.98-.104 2.715l-1.52 1.52c-.734.734-1.928.78-2.715.104l-1.246-1.067c-.635.34-1.299.616-1.985.824l-.125 1.634c-.079 1.035-.955 1.846-1.993 1.846zm-5.835-6.373c.848.53 1.768.912 2.734 1.135.426.099.739.462.772.898l.18 2.341 2.149-.001.18-2.34c.033-.437.347-.8.772-.898.967-.223 1.887-.604 2.734-1.135.371-.232.849-.197 1.181.089l1.784 1.529 1.52-1.52-1.529-1.784c-.285-.332-.321-.811-.089-1.181.53-.848.912-1.768 1.135-2.734.099-.426.462-.739.898-.772l2.341-.18h-.001v-2.148l-2.34-.18c-.437-.033-.8-.347-.898-.772-.223-.967-.604-1.887-1.135-2.734-.232-.37-.196-.849.089-1.181l1.529-1.784-1.52-1.52-1.784 1.529c-.332.286-.81.321-1.181.089-.848-.53-1.768-.912-2.734-1.135-.426-.099-.739-.462-.772-.898l-.18-2.341-2.148.001-.18 2.34c-.033.437-.347.8-.772.898-.967.223-1.887.604-2.734 1.135-.37.232-.849.197-1.181-.089l-1.785-1.529-1.52 1.52 1.529 1.784c.285.332.321.811.089 1.181-.53.848-.912 1.768-1.135 2.734-.099.426-.462.739-.898.772l-2.341.18.002 2.148 2.34.18c.437.033.8.347.898.772.223.967.604 1.887 1.135 2.734.232.37.196.849-.089 1.181l-1.529 1.784 1.52 1.52 1.784-1.529c.332-.287.813-.32 1.18-.089z"
+                      id="XMLID_1646_"
+                      fill="#7D8590"
+                    ></path>
+                    <path
+                      d="m16 23c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"
+                      fill="#7D8590"
+                      id="XMLID_1645_"
+                    ></path>
+                  </svg>
+                  Configurações
+                </button>
+                <button
+                  class="dropdown-dialog"
+                  style="color: red"
+                  onclick="location.href = '/api/logout'"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    id="CustomSVG"
+                  >
+                    <g
+                      transform="translate(0,512) scale(0.1,-0.1)"
+                      fill="#FF0000"
+                      stroke="none"
+                    >
+                      <path
+                        d="M365 4855 c-50 -18 -91 -62 -105 -114 -7 -27 -9 -703 -8 -2197 l3 -2159 24 -41 c13 -23 40 -51 61 -63 l38 -21 1112 0 1112 0 38 21 c21 12 47 38 59 59 21 38 21 40 21 881 l0 844 -23 39 c-55 96 -205 103 -270 12 l-22 -31 -5 -750 -5 -750 -907 -3 -908 -2 0 1980 0 1980 910 0 910 0 0 -744 0 -743 23 -33 c38 -57 71 -75 137 -75 66 0 99 18 138 75 l22 33 -2 858 c-3 854 -3 858 -24 886 -12 15 -36 37 -55 48 -33 20 -54 20 -1134 22 -930 2 -1106 0 -1140 -12z"
+                      />
+                      <path
+                        d="M3595 3781 c-95 -23 -149 -126 -114 -218 5 -15 192 -210 415 -433 222 -223 404 -409 404 -413 0 -4 -645 -7 -1432 -7 -1412 0 -1433 0 -1466 -20 -53 -33 -74 -75 -70 -145 4 -72 25 -106 84 -135 40 -20 57 -20 1470 -20 l1429 0 -419 -419 -419 -419 -4 -49 c-6 -57 9 -92 56 -137 32 -31 103 -45 158 -32 35 9 1135 1104 1164 1158 21 42 24 74 8 115 -11 31 -1109 1136 -1149 1157 -35 19 -80 25 -115 17z"
+                      />
+                    </g>
+                  </svg>
+                  Sair
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -37,28 +100,6 @@
         <div class="container">
           <div class="courses-list">
             <h1>Catálogo de Materiais</h1>
-            <div class="course-card">
-              <img
-                src="https://destinopoa.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-26-155029-1024x303.jpg"
-                alt="Course Thumbnail"
-              />
-              <div class="course-info">
-                <h2>Curso de Programação</h2>
-                <p>Descrição breve do curso.</p>
-                <a href="#" class="btn">Ver Detalhes</a>
-              </div>
-            </div>
-            <div class="course-card">
-              <img
-                src="https://destinopoa.com.br/wp-content/uploads/2024/03/Captura-de-tela-2024-03-26-155029-1024x303.jpg"
-                alt="Course Thumbnail"
-              />
-              <div class="course-info">
-                <h2>Curso de Design</h2>
-                <p>Descrição breve do curso.</p>
-                <a href="#" class="btn">Ver Detalhes</a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
