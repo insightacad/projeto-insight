@@ -27,17 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="course-info">
             <h2>${course.name}</h2>
             <p>${course.description}</p>
-<<<<<<< HEAD
             <a href="#" class="btn enroll-btn" data-course-id="${course.id}" data-course-link="${course.link}">Ver Detalhes</a>
-=======
-            <a href="${course.link}" class="btn">Ver Detalhes</a>
->>>>>>> 3cd5ea284e984cbe7dfe16fd84e9ed06f9499120
           </div>
         `;
 
         coursesList.appendChild(courseCard);
       });
-<<<<<<< HEAD
 
       // Adicionar evento de clique para os botões de inscrição
       const enrollButtons = document.querySelectorAll('.enroll-btn');
@@ -50,14 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-=======
->>>>>>> 3cd5ea284e984cbe7dfe16fd84e9ed06f9499120
     } catch (error) {
       console.error('Erro ao buscar cursos:', error);
     }
   };
 
-<<<<<<< HEAD
   const enrollUserInCourse = async (courseId, courseLink) => {
     try {
         const response = await fetch('/dashboard/api/user/enroll', {
@@ -84,8 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
 };
 
 
-=======
->>>>>>> 3cd5ea284e984cbe7dfe16fd84e9ed06f9499120
   fetchCourses();
 });
 

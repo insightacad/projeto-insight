@@ -26,12 +26,5 @@ const env = require('dotenv')
     router.get('/admin', (req, res) => {
         res.sendFile(path.join(__dirname, '../frontend/pages/admin.html'));
     });
-<<<<<<< HEAD
-=======
-
-    router.get('/admin', (req, res) => {
-        res.sendFile(path.join(__dirname, '../frontend/pages/admin.html'));
-    });
->>>>>>> 3cd5ea284e984cbe7dfe16fd84e9ed06f9499120
 
 module.exports = router;
