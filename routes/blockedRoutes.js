@@ -5,11 +5,16 @@ const userController = require('../controllers/userController');
 
 // Rotas da dashboard
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/pages/admin.html'));
+    res.sendFile(path.join(__dirname, '../frontend/pages/dashboard.html'));
 });
 
-router.get('/api', userController.dashboard);
+router.get('/conteudos', (req,res) => {
+    res.sendFile(path.join(__dirname, '../frontend/pages/courses.html'));
+});
 
+router.post('/api/user/enroll', userController.enrollUser);
+router.get('/api/user/courses', userController.getUserCourses);
+router.get('/api', userController.dashboard);
 router.get('/api/courses', userController.getCourses);
 
 module.exports = router;

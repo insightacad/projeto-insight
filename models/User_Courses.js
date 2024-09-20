@@ -1,22 +1,35 @@
 const Sequelize = require('sequelize');
-const db = require('../config/cfgdb');
+const db = require('../config/cfgdb'); // Certifique-se de que o caminho está correto
+const User = require('./User'); // Certifique-se de que o caminho está correto
+const Course = require('./Courses'); // Certifique-se de que o caminho está correto
 
 const UserCourses = db.define('user_courses', {
     user_id: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        references: {
+            model: User, // Associa com a tabela 'users'
+            key: 'id'
+        }
     },
     course_id: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        references: {
+            model: Course, // Associa com a tabela 'courses'
+            key: 'id'
+        }
     }
 }, {
-    timestamps: false, // Desativa o uso de createdAt e updatedAt
+    tableName: 'user_courses',
+    timestamps: false
 });
-//Criar a tabela (Manter comentado.)
-// User.sync();
+
+// Definindo as associações diretamente aqui
+UserCourses.belongsTo(User, { foreignKey: 'user_id', as: 'User' });
+UserCourses.belongsTo(Course, { foreignKey: 'course_id', as: 'Course' });
+
 module.exports = UserCourses;
+

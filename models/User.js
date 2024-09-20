@@ -25,6 +25,7 @@ const User = db.define('users', {
         allowNull: false,
     }
 }, {
+    tableName: 'users',
     timestamps: false, // Desativa o uso de createdAt e updatedAt
 });
 //Criar a tabela (Manter comentado.)
