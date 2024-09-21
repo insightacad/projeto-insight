@@ -1,6 +1,8 @@
 body {
     background-color: #f0f0f0;
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
@@ -9,17 +11,22 @@ h2 {
 
 .container {
     display: flex;
+    flex-direction: column;
     margin: 50px auto;
     width: 90%;
     max-width: 1200px;
 }
 
-.left-side {
-    width: 25%;
-    padding: 20px;
+.left-side, .right-side {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.left-side {
+    width: 100%;
     text-align: center;
 }
 
@@ -50,12 +57,7 @@ h2 {
 }
 
 .right-side {
-    width: 75%;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
+    width: 100%;
 }
 
 .right-side h2 {
@@ -65,6 +67,7 @@ h2 {
 .right-side .info {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 10px;
 }
 
@@ -127,3 +130,32 @@ h2 {
 .header .icons a:hover {
     color: #0055a4;
 }
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .left-side {
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+    .right-side {
+        width: 65%;
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .left-side {
+        width: 25%;
+    }
+
+    .right-side {
+        width: 70%;
+    }
+}
+

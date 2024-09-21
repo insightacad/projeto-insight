@@ -6,6 +6,8 @@
     <title>Profile | Insight</title>
     <link rel="stylesheet" href="../styles/style-profile.css">
     <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../media/images/logo.svg" />
+    <script src="../script/profile.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -13,8 +15,7 @@
             <a href="/dashboard">
                 <img src="../media/images/logo.svg" alt="Insight" class="logo-img">
             </a>
-            <h2 id="nickname-1"></h2>
-            <p>Usuário</p>
+	    <p></p>
             <button onclick="location.href = '/dashboard/settings'">
                 Atualizar Perfil
             </button>
@@ -30,7 +31,7 @@
             <h2>INFORMAÇÕES</h2>
             <div class="info">
                 <span>ID:</span>
-                <span>#0</span>
+                <span id="id">#0</span>
             </div>
             <div class="info">
                 <span>Nome:</span>
