@@ -6,9 +6,8 @@ async function loadprofile() {
         }
         const userinfo = await response.json();
         
-        // Modificando o texto do h2 com id 'nickname-1'
         const id = document.getElementById('id');
-        id.textContent = userinfo.user.id;
+        id.textContent = "#"+userinfo.user.id;
 
         // Modificando o texto do span com id 'nickname-2'
         const nicknameSpan = document.getElementById('nickname-2');
@@ -24,16 +23,19 @@ async function loadprofile() {
 
         // Modificando o texto do span com id 'courses'
         let resultado = "";
-        userinfo.course.forEach((course, index) => {
-            resultado += course.name; // Adiciona o curso atual à variável resultado
-            if (index < userinfo.course.length - 1) {
-                resultado += ", "; // Adiciona uma vírgula se não for o último elemento
-            }
-        });
+        if (userinfo.courses && Array.isArray(userinfo.courses)) {
+            userinfo.courses.forEach((course, index) => {
+                resultado += course.course_name; // Adiciona o curso atual à variável resultado
+                if (index < userinfo.courses.length - 1) {
+                    resultado += ", "; // Adiciona uma vírgula se não for o último elemento
+                }
+            });
+        } else {
+            resultado = "Nenhum curso disponível"; // Caso não haja cursos
+        }
 
         const coursesname = document.getElementById('courses');
         coursesname.textContent = resultado;
-        
     } catch (error) {
         console.error("Erro:", error);
         const nicknameHeader = document.getElementById('nickname-1');
@@ -42,3 +44,4 @@ async function loadprofile() {
 }
 
 window.onload = loadprofile;
+
