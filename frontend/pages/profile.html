@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile | Insight</title>
-    <link rel="stylesheet" href="../styles/style-profile.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/style-profile.css" />
+    <script
+      src="https://kit.fontawesome.com/your-fontawesome-kit-id.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="icon" type="image/png" href="../media/images/logo.svg" />
     <script src="../script/profile.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="left-side">
-            <a href="/dashboard">
-                <img src="../media/images/logo.svg" alt="Insight" class="logo-img">
-            </a>
-	    <p></p>
-            <button onclick="location.href = '/dashboard/settings'">
-                Atualizar Perfil
-            </button>
+      <div class="left-side">
+        <a href="/dashboard">
+          <img src="../media/images/logo.svg" alt="Insight" class="logo-img" />
+        </a>
+        <p></p>
+        <button onclick="location.href = '/dashboard/settings'">
+          Atualizar Perfil
+        </button>
 
-            <button onclick="location.href = '/dashboard'">
-                Retornar
-            </button>
+        <button onclick="location.href = '/dashboard'">Retornar</button>
+      </div>
+      <div class="right-side">
+        <div class="header">
+          <h1>Perfil</h1>
         </div>
-        <div class="right-side">
-            <div class="header">
-                <h1>Perfil</h1>
-            </div>
-            <h2>INFORMAÇÕES</h2>
-            <div class="info">
-                <span>ID:</span>
-                <span id="id">#0</span>
-            </div>
-            <div class="info">
-                <span>Nome:</span>
-                <span id="nickname-2">Visitante</span>
-            </div>
-            <div class="info">
-                <span>Username:</span>
-                <span id="username">@visitante</span>
-            </div>
-            <div class="info">
-                <span>Inscrições:</span>
-                <span id="courses"></span>
-            </div>
-            <h2>DESCRIÇÃO</h2>
-            <div class="social-media">
-                <p id="description"></p>
-            </div>
+        <h2>INFORMAÇÕES</h2>
+        <div class="info">
+          <span>ID:</span>
+          <span id="id">#0</span>
         </div>
+        <div class="info">
+          <span>Nome:</span>
+          <span id="nickname-2">Visitante</span>
+        </div>
+        <div class="info">
+          <span>Username:</span>
+          <span id="username">@visitante</span>
+        </div>
+        <div class="info">
+          <span>Inscrições:</span>
+          <span id="courses"></span>
+        </div>
+        <h2>DESCRIÇÃO</h2>
+        <div class="social-media">
+          <p id="description"></p>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
